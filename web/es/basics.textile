@@ -1,55 +1,55 @@
 ---
 layout: post
-title: Basics
+title: Básicos
 next: basics2.textile
 ---
 
-This lesson covers:
-* "About this class":#overview
-* "expressions":#expressions
-* "values":#val
-* "functions":#functions
-* "classes":#class
-* "basic inheritance":#extends
-* "traits":#trait
-* "types":#types
+Esta lección cubre:
+* "Acerca de esta clase":#overview
+* "expresiones":#expressions
+* "valores":#val
+* "funciones":#functions
+* "clases":#class
+* "herencia básica":#extends
+* "rasgos (traits)":#trait
+* "tipos":#types
 
-h2(#overview). About this class
+h2(#overview). Acerca de esta clase
 
-The first few weeks will cover basic syntax and concepts, then we'll start to open it up with more exercises.
+Las primeras semanas cubriremos la sintaxis y conceptos básicos, después comenzaremos a ampliarlo con más ejercicios.
 
-Some examples will be given as if written in the interpreter and others as if written in a source file.
+Algunos ejemplos serán dados escritos para el intérprete, otros como si fueran codigo en un archivo.
 
-Having an interpreter available makes it easy to explore a problem space.
+Tener el intérprete disponible hace más sencillo explorar el espacio de un problema.
 
 
-h3. Why Scala?
+h3. Por qué Scala?
 
-* Expressive
-** First-class functions
-** Closures
-* Concise
-** Type inference
-** Literal syntax for function creation
-* Java interoperability
-** Can reuse java libraries
-** Can reuse java tools
-** No performance penalty
+* Es expresivo
+** Funciones de primera-clase
+** Clausuras (closures) 
+* Es conciso
+** Inferencia de tipos
+** Sintaxis literal para creación de funciones
+* Interoperabilidad con Java
+** Reuso de bibliotecas de Java
+** Reuso de herramienttas de Java
+** Sin penalización del desempeño
 
-h3. How Scala?
+h3. Cómo Scala?
 
-* Compiles to java bytecode
-* Works with any standard JVM
-** Or even some non-standard JVMs like Dalvik
-** Scala compiler written by author of Java compiler
+* Compila a bytecode de Java
+* Opera en cualquier JVM
+** Y hasta en algunas JVMs no-estandar como Dalvik
+** El compilador de Scala fue escrito por el autor del compilador de Java
 
-h3. Think Scala
+h3. Piensa Scala
 
-Scala is not just a nicer Java.  You should learn it with a fresh mind- you will get more out of these classes.
+Para scarle más provecho a estas clases debes aprender Scala con una mente fresca. Scala no es tan solo un Java más bonito. 
 
-h3. Start the Interpreter
+h3. Inicia el Interprete
 
-Start the included <code>sbt console</code>.
+Inicializa la <code>sbt console</code> incluida.
 
 <pre>
 $ sbt console
@@ -64,7 +64,7 @@ scala>
 </pre>
 
 
-h2(#expressions). Expressions
+h2(#expressions). Expresiones
 
 <pre>
 scala> 1 + 1
