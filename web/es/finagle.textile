@@ -195,11 +195,7 @@ f: com.twitter.util.Future[(User, Boolean)] = Promise@35785606(...)
 scala>
 </pre>
 
-<<<<<<< HEAD
 produces a future <code>f: Future[(User, Boolean)]</code> with the user object and and a Boolean indicating whether that user has been banned. Note how sequential composition is required here: <code>isBanned</code> takes as an argument the output of <code>authenticate</code>.
-=======
-produces a future <code>f: Future[(User, Boolean)]</code> with the user object and and a Boolean indicating whether that user has been rate limited. Note how sequential composition is required here: <code>rateLimit</code> takes as an argument the output of <code>authenticate</code>.
->>>>>>> 72e35aca4bc16de3fb45f4c9d3cfd8b0f7e2c698
 
 <a name="futconcurrent">&nbsp;</a>
 
@@ -434,11 +430,7 @@ def crawl(url: String): Future[Seq[Resource]] =
     Future.collect(
       page.links map { u => crawl(u) }
     ) map { pps => pps.flatten }
-<<<<<<< HEAD
   }
-=======
-}
->>>>>>> 72e35aca4bc16de3fb45f4c9d3cfd8b0f7e2c698
 
 crawl("profile.html")
    ...hangs REPL, infinite loop...
@@ -525,10 +517,6 @@ import com.twitter.util.Future
 import org.jboss.netty.handler.codec.http.{DefaultHttpResponse, HttpVersion, HttpResponseStatus, HttpRequest, HttpResponse}
 import java.net.{SocketAddress, InetSocketAddress}
 import com.twitter.finagle.builder.{Server, ServerBuilder}
-<<<<<<< HEAD
-=======
-import com.twitter.finagle.builder.ServerBuilder
->>>>>>> 72e35aca4bc16de3fb45f4c9d3cfd8b0f7e2c698
 
 // Define our service: OK response for root, 404 for other paths
 val rootService = new Service[HttpRequest, HttpResponse] {
