@@ -1,11 +1,11 @@
 ---
 prev: java.textile
 next: searchbird.textile
-title: An introduction to Finagle
+title: Introducción a Finagle
 layout: post
 ---
 
-"Finagle":https://github.com/twitter/finagle is Twitter's RPC system. "This":http://engineering.twitter.com/2011/08/finagle-protocol-agnostic-rpc-system.html blog post explains its motivations and core design tenets, the "finagle README":https://github.com/twitter/finagle/blob/master/README.md contains more detailed documentation. Finagle aims to make it easy to build robust clients and servers.
+"Finagle":https://github.com/twitter/finagle es el sistema RPC de Twitter. "This":http://engineering.twitter.com/2011/08/finagle-protocol-agnostic-rpc-system.html blog post explains its motivations and core design tenets, the "finagle README":https://github.com/twitter/finagle/blob/master/README.md contains more detailed documentation. Finagle aims to make it easy to build robust clients and servers.
 
 * "REPL":#repl
 * "Futures":#Future: "Sequential composition":#futsequential, "Concurrent composition":#futconcurrent, "Composition Example: Cached Rate Limit":#combined_combinator_example_cache, "Composition Example: Thumbnail Fetcher":#combined_combinator_thumbnail
@@ -195,7 +195,7 @@ f: com.twitter.util.Future[(User, Boolean)] = Promise@35785606(...)
 scala>
 </pre>
 
-produces a future <code>f: Future[(User, Boolean)]</code> with the user object and and a Boolean indicating whether that user has been rate limited. Note how sequential composition is required here: <code>rateLimit</code> takes as an argument the output of <code>authenticate</code>.
+produces a future <code>f: Future[(User, Boolean)]</code> with the user object and and a Boolean indicating whether that user has been banned. Note how sequential composition is required here: <code>isBanned</code> takes as an argument the output of <code>authenticate</code>.
 
 <a name="futconcurrent">&nbsp;</a>
 
@@ -430,7 +430,7 @@ def crawl(url: String): Future[Seq[Resource]] =
     Future.collect(
       page.links map { u => crawl(u) }
     ) map { pps => pps.flatten }
-}
+  }
 
 crawl("profile.html")
    ...hangs REPL, infinite loop...
@@ -517,7 +517,6 @@ import com.twitter.util.Future
 import org.jboss.netty.handler.codec.http.{DefaultHttpResponse, HttpVersion, HttpResponseStatus, HttpRequest, HttpResponse}
 import java.net.{SocketAddress, InetSocketAddress}
 import com.twitter.finagle.builder.{Server, ServerBuilder}
-import com.twitter.finagle.builder.ServerBuilder
 
 // Define our service: OK response for root, 404 for other paths
 val rootService = new Service[HttpRequest, HttpResponse] {

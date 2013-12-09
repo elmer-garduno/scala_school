@@ -5,10 +5,10 @@ title: Type & polymorphism basics
 layout: post
 ---
 
-This lesson covers:
+Esta lección cubre:
 
-* "What are static types?":#background
-* "Types in Scala":#scala
+* "¿Qué son los Tipos Estáticos?":#background
+* "Tipos en Scala":#scala
 * "Parametric Polymorphism":#parametricpoly
 * "Type inference: Hindley-Milner vs. local type inference":#inference
 * "Variance":#variance
